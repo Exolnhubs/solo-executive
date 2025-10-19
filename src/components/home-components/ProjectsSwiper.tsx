@@ -62,7 +62,8 @@ export const Slider = ({ projects }: { projects: ProjectProps[] }) => {
                             transform={`translateX(${offsets[position]}) scale(${scales[position]})`}
                             zIndex={zIndexes[position]}
                             opacity={opacities[position]}
-                            w="40vw"
+                            minW={{ base: "300px", md: "400px" }}
+                            maxW={"90%"}
                             h="420px"
                             borderRadius="xl"
                             bg="white"

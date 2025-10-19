@@ -12,8 +12,8 @@ export const WhoWeAre = () => {
         align="stretch"
         gap={8}
         flexWrap="wrap"
-        mt={{base:"2rem" , lg:"4rem"}}
-        mb={{base:"2rem" , lg:"4rem"}}
+        mt={{ base: "2rem", lg: "4rem" }}
+        mb={{ base: "2rem", lg: "4rem" }}
 
       >
         {/* Text Section */}
@@ -51,48 +51,47 @@ export const WhoWeAre = () => {
         </VStack>
 
         <VStack w={{ base: "100%", md: "40%" }} position="relative" align="center">
-          {/* Wrapper to overlay the boxes */}
-          <Box position="relative" w="100%" h={{ base: "200px", md: "400px" }}>
-            {/* Bottom (dark) box */}
+          {/* Outer wrapper */}
+          <Box position="relative" w="100%">
+            {/* Gradient background that follows content height */}
             <Box
-              position="absolute"
-              top="0"
-              left="0"
               w="100%"
-              h="100%"
               borderRadius="lg"
               bg="linear-gradient(to right, rgba(255, 234, 132, 1), rgba(220, 156, 70, 1))"
-            />
-
-            {/* Top (gradient) box */}
-            <Box
-              position="absolute"
-              top="20px"   // adjust overlap offset
-              left="20px" // adjust overlap offset
-              w="100%"
-              minH="100%"
-              borderRadius="lg"
-              bg="rgba(12, 24, 42, 1)"
-              zIndex={1}
-              boxShadow="xl"
+              p="2px"
+              pb="0"
             >
-              <Box color={"white"} w={"100%"} h={"100%"} textAlign={"start"} justifyContent={"center"}>
-                <  VStack w={"100%"} h={"100%"} gap={4} fontSize={{ base: "0.9rem", md: "1rem" }} p={4} justifyContent={"space-between"}>
-                  <Text textAlign={"start"} w={"100%"}>
-                    وعدنا
-                  </Text>
-                  <Text borderBottom={"1px solid rgba(255, 255, 255, 0.5)"} pb={6}>
+              {/* Dark overlay content box */}
+              <Box
+                position="relative"
+                top="20px"
+                left="20px"
+                borderRadius="lg"
+                bg="rgba(12, 24, 42, 1)"
+                zIndex={1}
+                boxShadow="xl"
+                color="white"
+                p={4}
+              >
+                <VStack
+                  w="100%"
+                  gap={4}
+                  fontSize={{ base: "0.9rem", md: "1rem" }}
+                  textAlign="start"
+                  align="start"
+                >
+                  <Text fontWeight="bold">وعدنا</Text>
+                  <Text borderBottom="1px solid rgba(255, 255, 255, 0.5)" pb={6}>
                     تخطيط محكم يقلّل الهدر ويرفع العائد على كل ريال.
                     تنفيذ دقيق وآمن بقيادة فرق معتمدة وبروتوكولات واضحة.
                     شفافية كاملة في الميزانيات والتوريد والجداول الزمنية.
                     تقرير أداء بعدي برؤى عملية للتحسين المستمر.
                   </Text>
-                  <Text textAlign={"start"} w={"100%"}>
-                    مهمتنا
-                  </Text>
+
+                  <Text fontWeight="bold">مهمتنا</Text>
                   <Text>
                     عهدنا: مهنية بلا ضجيج، التزام مكتوب نراجعه بعد كل مشروع.
-                    الإتقان: الجودة نتيجة لنظام عمل (قوائم فحص، مسؤوليات واضحة، مراجعات)
+                    الإتقان: الجودة نتيجة لنظام عمل (قوائم فحص، مسؤوليات واضحة، مراجعات).
                     السلامة والمسؤولية: خطط مخاطر وطوارئ وتأمينات وتصاريح قبل أي تشغيل.
                     الشغف الهادئ: نحب ما نعمل، ونُخضعه لاختبار الجدوى قبل أن تراه على الأرض.
                   </Text>

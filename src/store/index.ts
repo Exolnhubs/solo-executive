@@ -8,7 +8,7 @@ import { combineReducers } from 'redux';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['language'], // only persist language
+  // whitelist: ['language'], // only persist language
 };
 
 const rootReducer = combineReducers({

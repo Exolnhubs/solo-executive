@@ -70,6 +70,7 @@ export const ServiceCard = memo(
                     bottom="6"
                     left="6"
                     right="6"
+                    w={"80%"}
                     zIndex={3}
                     color="white"
                     fontWeight="extrabold"
@@ -103,28 +104,30 @@ export const ServiceCard = memo(
                         flexDirection="column"
                         textAlign={"start"} gap={3}
                     >
-                        {/* Title inside overlay */}
-                        <Text
-                            color="white"
-                            fontWeight="extrabold"
-                            fontSize={{ base: "1.4rem", md: "1.8rem" }}
-                            lineHeight={1.2}
+                        <Box maxW={"90%"}>
+                            {/* Title inside overlay */}
+                            <Text
+                                color="white"
+                                fontWeight="extrabold"
+                                fontSize={{ base: "1.4rem", md: "1.8rem" }}
+                                lineHeight={1.2}
 
-                        >
-                            {service.title}
-                        </Text>
+                            >
+                                {service.title}
+                            </Text>
 
-                        {/* Description */}
-                        <Text
-                            color="white"
-                            fontSize={{ base: "0.95rem", md: "1.1rem" }}
-                            fontWeight="light"
-                            lineHeight={1.5}
-                        >
-                            {lang === "en"
-                                ? service.description.en
-                                : service.description.ar}
-                        </Text>
+                            {/* Description */}
+                            <Text
+                                color="white"
+                                fontSize={{ base: "0.95rem", md: "1.1rem" }}
+                                fontWeight="light"
+                                lineHeight={1.5}
+                            >
+                                {lang === "en"
+                                    ? service.description.en
+                                    : service.description.ar}
+                            </Text>
+                        </Box>
                     </Box>
                 </Box>
             </VStack>

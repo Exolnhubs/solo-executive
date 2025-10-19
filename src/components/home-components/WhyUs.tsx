@@ -48,10 +48,10 @@ export const WhyUs = () => {
             <Text fontSize={{ md: "1.5rem", lg: "2.5rem" }} fontWeight={700}>لماذا نحن الشريك الأنسب؟</Text>
             <Box w={"100px"} borderBottom={"4px solid rgba(220, 156, 70, 1)"} borderRadius={"2.5rem"} />
 
-            <HStack w={"90%"} gap={4} flexWrap={"wrap"} justifyContent={"space-between"} textAlign={"start"}>
+            <HStack w={"90%"} gap={4} flexWrap={"wrap"} justifyContent={{ base: "center", md: "space-between" }} textAlign={"start"}>
                 {
                     Reasons.map((card, i) => (
-                        <VStack key={i} w={{ base: "40%", md: "20%" }} minH={"200px"} align={"start"} p={4} gap={2} justifyContent={"space-between"}
+                        <VStack key={i} w={{ base: "80%", md: "40%", lg: "20%" }} minH={"200px"} align={"start"} p={4} gap={2} justifyContent={"space-between"}
                             bgColor={"rgba(255, 255, 255, 0.05)"} borderRadius={"lg"} border={"0.5px solid rgba(220, 156, 70, 0.12)"} boxShadow={"0px 0px 16px 0px rgba(220, 156, 70, 0.2)"}>
                             <Box w={"50px"} h={"50px"} borderRadius={"50%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
                                 {card.icon}
