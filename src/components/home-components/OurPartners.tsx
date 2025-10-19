@@ -5,7 +5,7 @@ import useSwiperDirectionFix from "../../hooks/useSwiperDirectionFix";
 import "swiper/swiper-bundle.css";
 import { useSelector } from "react-redux";
 import { selectLanguage } from "../../store/slices/languageSlice";
-const images = ["/Yallatech.webp", "/octobus.webp", "/Novel.webp", "/o2host.webp"];
+const images = ["/Partners.webp", "/Partners 2.webp", "/Partners 1.webp", "/Partners 3.webp", "/Partners 4.webp","/Partners 5.webp"];
 
 // Repeat images until we reach 10 slides
 const Slides = Array.from({ length: 6 }, (_, i) => ({
@@ -48,16 +48,16 @@ export const OurPartners = () => {
                 watchOverflow={true}
                 breakpoints={{
                     0: {
-                        slidesPerView: 2,
+                        slidesPerView: 3,
                         spaceBetween: 16,
                     },
                     768: {
-                        slidesPerView: 3,
+                        slidesPerView: 4,
                         spaceBetween: 24,
                     },
                     1024: {
-                        slidesPerView: 5,
-                        spaceBetween: 32,
+                        slidesPerView: 6,
+                        spaceBetween: 10,
                     },
                 }}
                 style={{
