@@ -174,6 +174,7 @@ export const Footer: FC = () => {
         width={"90%"}
         mt={"auto"}
         justifyContent={"space-between"}
+        flexDir={{base: "column", lg:"row"}}
         p={4}
       >
         <HStack gap={4}>
