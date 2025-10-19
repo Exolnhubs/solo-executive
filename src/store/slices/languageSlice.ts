@@ -8,8 +8,8 @@ export interface LanguageState {
 }
 
 const initialState: LanguageState = {
-  lang: 'en',
-  direction: 'ltr',
+  lang: 'ar',
+  direction: 'rtl',
 };
 
 const languageSlice = createSlice({
