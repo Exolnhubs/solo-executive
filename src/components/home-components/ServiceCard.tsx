@@ -53,6 +53,15 @@ export const ServiceCard = memo(
                         loading="lazy"
                         decoding="async"
                     />
+                    {/* overlay */}
+                    <Box
+                        position="absolute"
+                        inset={0}
+                        zIndex={1}
+                        bg="#00000040"
+                        opacity={isHovered ? 1 : 0.5}
+                        transition="opacity 0.4s ease"
+                    />
                 </Box>
 
                 {/* Always visible title (outside overlay when not hovered) */}
@@ -88,7 +97,7 @@ export const ServiceCard = memo(
                     <Box
                         w="100%"
                         h="100%"
-                        background="linear-gradient(to top, rgba(12,24,42,0.95), rgba(12,24,42,0.7))"
+                        background="linear-gradient(to top, #00000000 10%,  #0C182ACC 80%)"
                         p={6}
                         display="flex"
                         flexDirection="column"
