@@ -39,7 +39,7 @@ export const Slider = ({ projects }: { projects: ProjectProps[] }) => {
             <Box
                 position="relative"
                 w="100%"
-                h="450px"
+                h="650px"
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
@@ -64,30 +64,28 @@ export const Slider = ({ projects }: { projects: ProjectProps[] }) => {
                             opacity={opacities[position]}
                             minW={{ base: "300px", md: "400px" }}
                             maxW={{ base: "85%", md: "70%" }}
-                            h="420px"
                             borderRadius="xl"
                             bg="white"
                             boxShadow={isCenter ? "2xl" : "md"}
                             overflow="hidden"
+                            p={4}
                         >
-
                             <HStack
-                                justify="space-between"
-                                align="stretch"
-                                h="100%"
-                                w={{ base: "90%", md: "100%" }}
+                                align={{ base: "center", md: "stretch" }}
+                                w="100%"
                                 gap={0}
                                 flexDir={{ base: "column", md: "row" }}
                             >
                                 {/* Text */}
                                 <VStack
-                                    w="45%"
-                                    h="100%"
-                                    p={4}
+                                    w={{ base: "100%", md: "50%" }}
                                     align="start"
-                                    justifyContent="space-around"
+                                    justify="space-around"
                                     textAlign="start"
+                                    gap={4}
+                                    p={4}
                                 >
+
                                     <Text fontWeight="700" fontSize="1.5rem" color={"#DC9C46"} lineClamp={2}>
                                         {slide.title}
                                     </Text>
@@ -109,14 +107,20 @@ export const Slider = ({ projects }: { projects: ProjectProps[] }) => {
                                 </VStack>
 
                                 {/* Image */}
-                                <Box w="50%" h="100%" >
+                                <Box
+                                    w={{ base: "100%", md: "50%" }}
+                                    h="auto"
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                >
                                     <Image
                                         src={slide.image}
                                         alt={slide.title}
                                         w="100%"
                                         h="100%"
-                                        p={4}
                                         objectFit="cover"
+                                        borderRadius="md"
                                     />
                                 </Box>
                             </HStack >
