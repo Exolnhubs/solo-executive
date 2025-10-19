@@ -17,6 +17,7 @@ import { WhyUs } from "../components/home-components/WhyUs.tsx";
 import { CTA } from "../components/home-components/CTA.tsx";
 import { OurServices } from "../components/home-components/OurServices.tsx";
 import { ProjectSlider } from "../components/home-components/ProjectSlider.tsx";
+import { ConactSection } from "../components/home-components/ConactSection.tsx";
 
 // Memoized Hero Background Component
 const HeroBackground = memo(() => {
@@ -155,12 +156,17 @@ export const Home = () => {
         <OurServices />
         <ProjectSlider />
 
+
+
         {/* Content sections */}
         <VStack w="100%" h="100%" p={8} gap={8} >
           <OurPartners />
         </VStack>
       </>
       )}
+
+
+      <ConactSection/>
       <CTA />
 
     </VStack>
