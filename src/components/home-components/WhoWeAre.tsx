@@ -52,10 +52,10 @@ export const WhoWeAre = () => {
 
         <VStack w={{ base: "100%", md: "40%" }} position="relative" align="center">
           {/* Outer wrapper */}
-          <Box position="relative" w="100%">
+          <VStack  position="relative" w="100%">
             {/* Gradient background that follows content height */}
             <Box
-              w="100%"
+              w="90%"
               borderRadius="lg"
               bg="linear-gradient(to right, rgba(255, 234, 132, 1), rgba(220, 156, 70, 1))"
               p="2px"
@@ -98,7 +98,7 @@ export const WhoWeAre = () => {
                 </VStack>
               </Box>
             </Box>
-          </Box>
+          </VStack>
         </VStack>
 
       </HStack>
