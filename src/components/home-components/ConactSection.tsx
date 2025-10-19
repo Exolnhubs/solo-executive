@@ -37,19 +37,48 @@ export const ConactSection = () => {
                         w="15vw"  // better than 10% for viewport alignment
                     />
 
-                    <VStack color={"#464E5F"} gap={4} w={{ base: "100%", md: "40%" }} textAlign={"start"} border={"2px solid rgba(12, 24, 42, 0.1)"} p={8} borderRadius={"lg"}>
+                    <VStack color={"#464E5F"} gap={4} bg={"white"} zIndex={2} w={{ base: "120%", md: "40%" }}
+                        textAlign={"start"} border={"2px solid rgba(12, 24, 42, 0.1)"}
+                        p={8} borderRadius={"lg"}>
 
-                        <HStack w={"100%"} textAlign={"start"}> <VStack w={"50%"}> <Text w={"100%"} fontSize={"1rem"}
-                            fontWeight={700}> الاسم الكامل </Text> <Input bg="rgba(12, 24, 42, 0.1)" border="none"
+                        <HStack w={"100%"} textAlign={"start"}> <VStack w={"50%"}>
+                            <Text w={"100%"} fontSize={"1rem"}
+                                fontWeight={700}> الاسم الكامل </Text>
+                            <Input bg="rgba(12, 24, 42, 0.1)" border="none"
                                 borderRadius={"lg"} placeholder="الاسم الكامل" type="text" />
-                        </VStack> <VStack w={"50%"}>
+                        </VStack>
+                            <VStack w={"50%"}>
                                 <Text w={"100%"} fontSize={"1rem"} fontWeight={700}> رقم الجوال </Text>
-                                <Input bg="rgba(12, 24, 42, 0.1)" border="none" borderRadius={"lg"} w={"100%"} placeholder="رقم الجوال" type="number" /> </VStack> </HStack> <HStack w={"100%"} textAlign={"start"}> <VStack w={"50%"}> <Text w={"100%"} fontSize={"1rem"} fontWeight={700}> البريد الالكتروني </Text> <Input bg="rgba(12, 24, 42, 0.1)" border="none" borderRadius={"lg"} placeholder="البريد الالكتروني" type="email" /> </VStack> <VStack w={"50%"}> <Text w={"100%"} fontSize={"1rem"} fontWeight={700}> اسم الشركة </Text> <Input bg="rgba(12, 24, 42, 0.1)" border="none" borderRadius={"lg"} placeholder="اسم الشركة" type="text" /> </VStack> </HStack> <VStack w={"100%"}> <Text w={"100%"} fontSize={"1rem"} fontWeight={700}> نوع الفعالية </Text> <Input bg="rgba(12, 24, 42, 0.1)" border="none" borderRadius={"lg"} placeholder="مؤتمر، معرض، ندوة، إلخ..." type="text" /> </VStack> <VStack w={"100%"}> <Text w={"100%"} fontSize={"1rem"} fontWeight={700}> تفاصيل الفعالية </Text> <Input h="100px" bg="rgba(12, 24, 42, 0.1)" border="none" borderRadius={"lg"} placeholder="أخبرنا المزيد عن فعاليتك..." type="text" /> </VStack> <Box _hover={{ transform: "scale(105%)", bg: "#ffbd67ff" }} as={"button"} w={"100%"} fontWeight={"700"} p={2} color={"#0C182A"} bg={"#DC9C46"} borderRadius={"md"}>
-                            إرسال الطلب</Box> </VStack>
+                                <Input bg="rgba(12, 24, 42, 0.1)" border="none" borderRadius={"lg"}
+                                    w={"100%"} placeholder="رقم الجوال" type="number" /> </VStack>
+                        </HStack> <HStack w={"100%"} textAlign={"start"}>
+                            <VStack w={"50%"}>
+                                <Text w={"100%"} fontSize={"1rem"} fontWeight={700}> البريد الالكتروني </Text>
+                                <Input bg="rgba(12, 24, 42, 0.1)" border="none" borderRadius={"lg"}
+                                    placeholder="البريد الالكتروني" type="email" />
+                            </VStack> <VStack w={"50%"}>
+                                <Text w={"100%"} fontSize={"1rem"} fontWeight={700}> اسم الشركة </Text>
+                                <Input bg="rgba(12, 24, 42, 0.1)" border="none" borderRadius={"lg"}
+                                    placeholder="اسم الشركة" type="text" /> </VStack>
+                        </HStack>
+                        <VStack w={"100%"}>
+                            <Text w={"100%"} fontSize={"1rem"} fontWeight={700}> نوع الفعالية </Text>
+                            <Input bg="rgba(12, 24, 42, 0.1)" border="none" borderRadius={"lg"}
+                                placeholder="مؤتمر، معرض، ندوة، إلخ..." type="text" />
+                        </VStack> <VStack w={"100%"}>
+                            <Text w={"100%"} fontSize={"1rem"} fontWeight={700}> تفاصيل الفعالية </Text>
+                            <Input h="100px" bg="rgba(12, 24, 42, 0.1)" border="none" borderRadius={"lg"}
+                                placeholder="أخبرنا المزيد عن فعاليتك..." type="text" />
+                        </VStack>
+                        <Box _hover={{ transform: "scale(105%)", bg: "#ffbd67ff" }} as={"button"}
+                            w={"100%"} fontWeight={"700"} p={2} color={"#0C182A"} bg={"#DC9C46"}
+                            borderRadius={"md"}>
+                            إرسال الطلب</Box>
+                    </VStack>
 
                     <VStack
 
-                        w={{ base: "80%", md: "30%" }} marginInlineEnd={"0%"}
+                        w={{ base: "120%", md: "30%" }}
                         borderRadius={"lg"} bg={"rgba(12, 24, 42, 1)"} color={"white"}
                         p={12} gap={8} zIndex={2}>
                         <Text fontSize={"1.5rem"} w={"100%"} textAlign={"start"} fontWeight={700}>
