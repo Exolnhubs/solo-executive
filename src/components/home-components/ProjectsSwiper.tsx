@@ -63,7 +63,7 @@ export const Slider = ({ projects }: { projects: ProjectProps[] }) => {
                             zIndex={zIndexes[position]}
                             opacity={opacities[position]}
                             minW={{ base: "300px", md: "400px" }}
-                            maxW={"90%"}
+                            maxW={{ base: "85%", md: "70%" }}
                             h="420px"
                             borderRadius="xl"
                             bg="white"
@@ -75,8 +75,9 @@ export const Slider = ({ projects }: { projects: ProjectProps[] }) => {
                                 justify="space-between"
                                 align="stretch"
                                 h="100%"
-                                w="100%"
+                                w={{ base: "90%", md: "100%" }}
                                 gap={0}
+                                flexDir={{ base: "column", md: "row" }}
                             >
                                 {/* Text */}
                                 <VStack
@@ -87,7 +88,7 @@ export const Slider = ({ projects }: { projects: ProjectProps[] }) => {
                                     justifyContent="space-around"
                                     textAlign="start"
                                 >
-                                    <Text fontWeight="700" fontSize="1.5rem"  color={"#DC9C46"} lineClamp={2}>
+                                    <Text fontWeight="700" fontSize="1.5rem" color={"#DC9C46"} lineClamp={2}>
                                         {slide.title}
                                     </Text>
                                     <VStack align={"start"} color={"#0C182A"} w={"100%"} minH={"30%"} gap={8} justifyContent={"space-between"} fontWeight={700}>
