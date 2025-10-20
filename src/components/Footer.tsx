@@ -7,14 +7,14 @@ import { Box, Text } from "@chakra-ui/react";
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { type FC } from "react";
 import { useColorModeValue } from "@chakra-ui/color-mode";
-import { Link as RouterLink } from "react-router-dom";
+// import { Link as RouterLink } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { TfiLocationPin } from "react-icons/tfi";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { IoMail } from "react-icons/io5";
 import { FaLinkedinIn } from "react-icons/fa";
-import { useSelector, useDispatch } from "react-redux";
-import { setActiveLink } from "../store/slices/navSlice";
+import { useSelector } from "react-redux";
+// import { setActiveLink } from "../store/slices/navSlice";
 import type { RootState } from "../store";
 import { useTranslation } from "../hooks/useTranslation";
 import { Services } from "./home-components/OurServices";
@@ -22,7 +22,7 @@ export const Footer: FC = () => {
   const lang = useSelector(selectLanguage);
   const t = useTranslation;
   const { links } = useSelector((state: RootState) => state.nav);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <VStack
@@ -133,27 +133,55 @@ export const Footer: FC = () => {
           (
             link.subNav ? null :
               <Box key={link.href}>
-                <RouterLink
+                {/* <RouterLink
                   to={link.href}
                   onClick={() => dispatch(setActiveLink(link.href))}
+                > */}
+                <Text
+                  textAlign="start"
+                  width="100%"
+                  fontSize={{ base: "1rem", md: "1.2rem" }}
+                  fontWeight={400}
+                  _hover={{
+                    color: useColorModeValue("#4d7cb1", "gray.100"),
+                    textDecoration: "underline",
+                  }}
+                  color={useColorModeValue("white", "gray.400")}
+                  m={2}
                 >
-                  <Text
-                    textAlign="start"
-                    width="100%"
-                    fontSize={{ base: "1rem", md: "1.2rem" }}
-                    fontWeight={400}
-                    _hover={{
-                      color: useColorModeValue("#4d7cb1", "gray.100"),
-                      textDecoration: "underline",
-                    }}
-                    color={useColorModeValue("white", "gray.400")}
-                    m={2}
-                  >
-                    {lang === "en" ? link.en : link.ar}
-                  </Text>
-                </RouterLink>
+                  {lang === "en" ? link.en : link.ar}
+                </Text>
+                {/* </RouterLink> */}
               </Box>
           ))}
+          <Text
+            textAlign="start"
+            width="100%"
+            fontSize={{ base: "1rem", md: "1.2rem" }}
+            fontWeight={400}
+            _hover={{
+              color: useColorModeValue("#4d7cb1", "gray.100"),
+              textDecoration: "underline",
+            }}
+            color={useColorModeValue("white", "gray.400")}
+            m={2}
+          >            سياسة الخصوصية
+          </Text>
+          <Text
+            textAlign="start"
+            width="100%"
+            fontSize={{ base: "1rem", md: "1.2rem" }}
+            fontWeight={400}
+            _hover={{
+              color: useColorModeValue("#4d7cb1", "gray.100"),
+              textDecoration: "underline",
+            }}
+            color={useColorModeValue("white", "gray.400")}
+            m={2}
+          >            الشروط والأحكام
+          </Text>
+
+
         </VStack>
         {/* Services Info */}
         <VStack height={"100%"} alignItems={{ base: "flex-start" }} w={{ base: "100%", md: "25%" }} justifyContent={"space-between"} align={{ base: "center", md: "flex-start" }}>
@@ -174,7 +202,7 @@ export const Footer: FC = () => {
         width={"90%"}
         mt={"auto"}
         justifyContent={"space-between"}
-        flexDir={{base: "column", lg:"row"}}
+        flexDir={{ base: "column", lg: "row" }}
         p={4}
       >
         <HStack gap={4}>

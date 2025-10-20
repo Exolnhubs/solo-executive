@@ -17,21 +17,27 @@ export const WhoWeAre = () => {
 
       >
         {/* Text Section */}
-        <VStack w={{ base: "100%", md: "45%" }} align="start" gap={6} justifyContent={"center"}>
-          <Text
-            fontSize="1rem"
-            fontWeight={500}
-            whiteSpace="pre-line"
-            color="rgba(70, 78, 95, 1)"
-            lineHeight="1.8"
-            textAlign={"start"}
-          >
+        <VStack w={{ base: "100%", md: "45%" }}
+          fontWeight={500}
+          whiteSpace="pre-line"
+          color="#464E5F" align="start" gap={6} justifyContent={"center"}
+          fontSize={{ base: "0.8rem", md: "1rem", lg: "1.2rem" }}
+          lineHeight="1.8"
+          textAlign={"start"}>
+          <Text>
             في التنفيذي المنفرد لا نبيع فعالية؛ نُصمّم تجربة متكاملة تدور حول هدفك التجاري وتُدار بمعايير تشغيل صارمة، من أول فكرة حتى تقرير ما بعد الإغلاق. نعمل كشريك مسؤول أمام النتائج: حضور نوعي، تفاعل ملموس، ومردود يُقاس بالبيانات لا بالصور.
-
-            {"\n\n"}مهمتنا{"\n"}
+          </Text>
+          <Text fontWeight={700}>
+            مهمتنا
+          </Text>
+          <Text>
             تصميم وتشغيل تجارب فعّالة، آمنة، ومحسوبة العائد عبر منظومة خدمات تبدأ من الإستراتيجية وتنتهي بقياس النتائج والتحسين.
+          </Text>
+          <Text fontWeight={700}>
 
-            {"\n\n"}رؤيتنا{"\n"}
+            رؤيتنا{"\n"}
+          </Text>
+          <Text>
             تصميم وتشغيل تجارب فعّالة، آمنة، ومحسوبة العائد عبر منظومة خدمات تبدأ من الإستراتيجية وتنتهي بقياس النتائج والتحسين.
           </Text>
 
@@ -52,7 +58,7 @@ export const WhoWeAre = () => {
 
         <VStack w={{ base: "100%", md: "40%" }} position="relative" align="center">
           {/* Outer wrapper */}
-          <VStack  position="relative" w="100%">
+          <VStack position="relative" w="100%">
             {/* Gradient background that follows content height */}
             <Box
               w="90%"
@@ -101,8 +107,8 @@ export const WhoWeAre = () => {
           </VStack>
         </VStack>
 
-      </HStack>
-    </VStack>
+      </HStack >
+    </VStack >
   );
 };
 

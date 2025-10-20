@@ -63,7 +63,7 @@ export const Navbar = () => {
 
           return (
             <Box key={link.href} position="relative" ref={dropdownRef}>
-              <RouterLink to={link.subNav ? "#" : link.href}>
+              {/* <RouterLink to={link.subNav ? "#" : link.href}> */}
                 <Box
                   onClick={() =>
                     link.subNav 
@@ -89,7 +89,7 @@ export const Navbar = () => {
                   {lang === "en" ? link.en : link.ar}
                 {link.subNav && link.subNav.length > 0 ? <FaAngleDown size="0.8rem" /> : null}
                 </Box>
-              </RouterLink>
+              {/* </RouterLink> */}
 
               {/* SubNav dropdown */}
               {link.subNav  && isDropdownOpen && (
