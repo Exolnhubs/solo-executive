@@ -1,6 +1,6 @@
-import { VStack, Text, HStack, Image, Box } from "@chakra-ui/react";
+import { VStack, Text, HStack, Image, Box, IconButton } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { FaBuilding } from "react-icons/fa";
+import { FaBuilding, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { LuCalendar } from "react-icons/lu";
 import { TfiLocationPin } from "react-icons/tfi";
 
@@ -23,6 +23,14 @@ export const Slider = ({ projects }: { projects: ProjectProps[] }) => {
         return () => clearInterval(interval);
     }, [projects.length]);
 
+    const handlePrev = () => {
+        setActive((prev) => (prev - 1 + projects.length) % projects.length);
+    };
+
+    const handleNext = () => {
+        setActive((prev) => (prev + 1) % projects.length);
+    };
+
     // helper to get visible indices (3 slides: left, center, right)
     const getVisible = () => {
         const left = (active - 1 + projects.length) % projects.length;
@@ -44,6 +52,24 @@ export const Slider = ({ projects }: { projects: ProjectProps[] }) => {
                 justifyContent="center"
                 alignItems="center"
             >
+                {/* Left Arrow */}
+                <IconButton
+                    aria-label="Previous slide"
+                    // icon={<FaChevronLeft />}
+                    onClick={handlePrev}
+                    position="absolute"
+                    left={{ base: "0", md: "5%" }}
+                    zIndex={20}
+                    borderRadius="full"
+                    bg="#DC9C46"
+                    color="white"
+                    _hover={{ bg: "#DC9C46", opacity: 0.8 }}
+                    _active={{ bg: "white", color: "#DC9C46", borderWidth: "2px", borderColor: "#DC9C46" }}
+                    size="lg"
+                >
+                    <FaChevronLeft />
+                </IconButton>
+
                 {visibleSlides.map((slideIndex, position) => {
                     const slide = projects[slideIndex];
                     const isCenter = position === 1;
@@ -127,7 +153,44 @@ export const Slider = ({ projects }: { projects: ProjectProps[] }) => {
                         </Box >
                     );
                 })}
+
+                {/* Right Arrow */}
+                <IconButton
+                    aria-label="Next slide"
+                    // icon={<FaChevronRight />}
+                    onClick={handleNext}
+                    position="absolute"
+                    right={{ base: "0", md: "5%" }}
+                    zIndex={20}
+                    borderRadius="full"
+                    bg="#DC9C46"
+                    color="white"
+                    _hover={{ bg: "#DC9C46", opacity: 0.8 }}
+                    _active={{ bg: "white", color: "#DC9C46", borderWidth: "2px", borderColor: "#DC9C46" }}
+                    size="lg"
+                >
+                    <FaChevronRight />
+                </IconButton>
             </Box >
+
+            {/* Pagination Dots */}
+            <HStack gap={3} justify="center">
+                {projects.map((_, index) => (
+                    <Box
+                        key={index}
+                        w={active === index ? "14px" : "10px"}
+                        h={active === index ? "14px" : "10px"}
+                        borderRadius="full"
+                        bg={active === index ? "white" : "#DC9C46"}
+                        borderWidth={active === index ? "2px" : "0"}
+                        borderColor="#DC9C46"
+                        transition="all 0.3s ease"
+                        cursor="pointer"
+                        onClick={() => setActive(index)}
+                        _hover={{ transform: "scale(1.1)" }}
+                    />
+                ))}
+            </HStack>
         </VStack >
     );
 };
