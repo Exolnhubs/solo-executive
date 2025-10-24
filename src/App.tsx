@@ -28,11 +28,7 @@ function App() {
           {/* <TimedPopup /> */}
           <Routes>
             <Route path="/" element={<Home />} />
-
-
             <Route path="*" element={<NotFound />} />
-
-
           </Routes>
           {/* <Toaster /> */}
         </main>

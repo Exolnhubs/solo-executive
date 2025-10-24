@@ -2,7 +2,7 @@ import { HStack, VStack, Text, Box } from "@chakra-ui/react";
 
 export const WhoWeAre = () => {
   return (
-    <VStack>
+    <VStack id="about">
       <Text color={"rgba(220, 156, 70, 1)"} fontWeight="700" fontSize={"1rem"}>من نحن</Text>
       <Text fontSize={{ sm: "1.5rem", md: "2.5rem" }} fontWeight="700" color={"black"}>نبني تجارب تُحكى… ونقيس أثرها</Text>
       <Box w="100px" borderBottom={"4px solid rgba(220, 156, 70, 1)"} />

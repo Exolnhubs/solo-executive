@@ -121,7 +121,7 @@ export const OurServices = () => {
 
 
     return (
-        <VStack w={"80%"} mt={8} style={{ contentVisibility: "auto" }} // 👈 huge perf boost
+        <VStack w={"80%"} mt={8} id="Services" style={{ contentVisibility: "auto" }} // 👈 huge perf boost
             justifyContent={"center"} alignItems={"center"} gap={8}>
             <Text fontSize={{ base: "1.5rem", md: "2rem", lg: "2.5rem" }} fontWeight="bold">خدماتنا وتفاصيلها</Text>
             <Box w="100px" borderBottom={"4px solid rgba(220, 156, 70, 1)"} />

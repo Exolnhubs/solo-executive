@@ -6,7 +6,7 @@ import { MdMail } from "react-icons/md"
 
 export const ConactSection = () => {
     return (
-        <VStack w={"100%"} gap={8} align={"center"} justify={"center"}>
+        <VStack w={"100%"} gap={8} id="contact" align={"center"} justify={"center"}>
             <VStack position="relative" zIndex={1} p={10} gap={4}>
                 <Text color={"#DC9C46"} fontSize={"1rem"} fontWeight={700}>
                     تواصل معنا                </Text>
