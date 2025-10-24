@@ -82,10 +82,11 @@ export const Home = () => {
   const [loading, setLoading] = useState(true);
   // const lang = useSelector(selectLanguage);
   const handleOpenProfile = () => {
-    const pdfUrl = `${window.location.origin}/profile-solo-executive.pdf`;
-    const viewerUrl = `https://docs.google.com/gview?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
+    const pdfUrl = `${window.location.origin}/profile-soloexecutive.pdf`; // no spaces in filename
+    const viewerUrl = `https://docs.google.com/gview?url=${pdfUrl}&embedded=true`;
     window.open(viewerUrl, "_blank");
   };
+
   // Simulate loading images & content
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 100);
@@ -127,10 +128,10 @@ export const Home = () => {
             <HStack gap={4} mt={4}>
               <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700} fontSize={{ base: "sm", md: "md", lg: "lg" }} color={"black"} bg={"rgba(220, 156, 70, 1)"}>اطلب استشارة مجانية</Box>
               <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700} onClick={handleOpenProfile}
-              _hover={{
-                color:"rgba(220, 156, 70, 0.6)",
-                scale:"1.1"
-              }}
+                _hover={{
+                  color: "rgba(220, 156, 70, 0.6)",
+                  scale: "1.1"
+                }}
                 fontSize={{ base: "sm", md: "md", lg: "lg" }} bg={"white"} color={"rgba(220, 156, 70, 1)"}>حمّل بروفايل الشركة</Box>
 
             </HStack>
