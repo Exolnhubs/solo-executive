@@ -75,8 +75,6 @@ HeroBackground.displayName = "HeroBackground";
 
 
 
-
-
 export const Home = () => {
 
   const [loading, setLoading] = useState(true);
@@ -93,6 +91,23 @@ export const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleScroll = (href: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    // Convert `/contact` to `#contact`
+    if (href === "/") {
+      href = "#home";
+    }
+    const alt = href.startsWith("#") ? href : "#" + href.replace("/", "");
+    const section = document.querySelector(alt);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.pushState(null, "", alt);
+    } else {
+      console.warn(`Skipping invalid scroll target: ${alt}`);
+    }
+  };
 
 
   return (
@@ -126,7 +141,10 @@ export const Home = () => {
               نحوّل فكرتك إلى تجربة متكاملة تصنع أثراً وتبقى في الذاكرة—من التخطيط إلى آخر ضيف يغادر.
             </Text>
             <HStack gap={4} mt={4}>
-              <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700} fontSize={{ base: "sm", md: "md", lg: "lg" }} color={"black"} bg={"rgba(220, 156, 70, 1)"}>اطلب استشارة مجانية</Box>
+              <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700}
+              onClick={handleScroll("#contact")}
+              fontSize={{ base: "sm", md: "md", lg: "lg" }} color={"black"} bg={"rgba(220, 156, 70, 1)"}
+              >اطلب استشارة مجانية</Box>
               <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700} onClick={handleOpenProfile}
                 _hover={{
                   color: "rgba(220, 156, 70, 0.6)",
