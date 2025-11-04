@@ -1,20 +1,21 @@
-import { VStack, Text, Box, Image } from "@chakra-ui/react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
-import useSwiperDirectionFix from "../../hooks/useSwiperDirectionFix";
+import { VStack, Text, Box } from "@chakra-ui/react";
+// import { Image } from "@chakra-ui/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Pagination, Autoplay, Navigation } from "swiper/modules";
+// import useSwiperDirectionFix from "../../hooks/useSwiperDirectionFix";
 import "swiper/swiper-bundle.css";
 import { useSelector } from "react-redux";
 import { selectLanguage } from "../../store/slices/languageSlice";
-const images = ["/Partners.webp", "/Partners 2.webp", "/Partners 1.webp", "/Partners 3.webp", "/Partners 4.webp","/Partners 5.webp"];
+// const images = ["/Partners.webp", "/Partners 2.webp", "/Partners 1.webp", "/Partners 3.webp", "/Partners 4.webp","/Partners 5.webp"];
 
 // Repeat images until we reach 10 slides
-const Slides = Array.from({ length: 6 }, (_, i) => ({
-    img: images[i % images.length],
-}));
+// const Slides = Array.from({ length: 6 }, (_, i) => ({
+//     img: images[i % images.length],
+// }));
 
 export const OurPartners = () => {
     const lang = useSelector(selectLanguage);
-    const { swiperRef, direction, key } = useSwiperDirectionFix();
+    // const { swiperRef, direction, key } = useSwiperDirectionFix();
 
     return (
         <VStack w="100%" mx="auto" gap={8}>
@@ -30,7 +31,7 @@ export const OurPartners = () => {
                 عملاؤنا هم مصدر فخرنا. تعاونا مع جهات حكومية وخاصة رائدة في مختلف المجلات
             </Text>
 
-            <Swiper
+            {/* <Swiper
                 key={key}
                 ref={swiperRef}
                 direction="horizontal"
@@ -84,7 +85,7 @@ export const OurPartners = () => {
                         </Box>
                     </SwiperSlide>
                 ))}
-            </Swiper>
+            </Swiper> */}
 
             <Box as={"button"} bg={"rgba(220, 156, 70, 1)"} color="black"
                 lineHeight={"100%"} fontSize={"1.2rem"} fontWeight={700}
