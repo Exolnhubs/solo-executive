@@ -219,18 +219,18 @@ export const Footer: FC = () => {
         p={4}
       >
         <HStack gap={4}>
-          <Box bg={"rgba(255, 255, 255, 0.1)"} p={2} borderRadius={"md"}>
+          <Box bg={"rgba(255, 255, 255, 0.1)"} p={2} borderRadius={"md"} onClick={() => window.open("https://www.facebook.com/soloexev", "_blank")}>
             <FaFacebookF size={"1.5rem"} />
           </Box>
-          <Box bg={"rgba(255, 255, 255, 0.1)"} p={2} borderRadius={"md"}>
+          <Box bg={"rgba(255, 255, 255, 0.1)"} p={2} borderRadius={"md"} onClick={() => window.open("https://twitter.com/soloexev", "_blank")}>
 
             <FaTwitter size={"1.5rem"} />
           </Box>
-          <Box bg={"rgba(255, 255, 255, 0.1)"} p={2} borderRadius={"md"}>
+          <Box bg={"rgba(255, 255, 255, 0.1)"} p={2} borderRadius={"md"} onClick={() => window.open("https://www.instagram.com/soloexev", "_blank")}>
 
             <FaInstagram size={"1.5rem"} />
           </Box>
-          <Box bg={"rgba(255, 255, 255, 0.1)"} p={2} borderRadius={"md"}>
+          <Box bg={"rgba(255, 255, 255, 0.1)"} p={2} borderRadius={"md"} onClick={() => window.open("https://www.linkedin.com/company/soloexev", "_blank")}>
 
             <FaLinkedinIn size={"1.5rem"} />
           </Box>
