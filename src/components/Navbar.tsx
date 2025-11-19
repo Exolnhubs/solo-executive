@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setActiveLink } from "../store/slices/navSlice";
 import type { RootState } from "../store";
 import { selectLanguage } from "../store/slices/languageSlice";
-import { FaAngleDown } from "react-icons/fa";
+// import { FaAngleDown } from "react-icons/fa";
 import { useState, useRef, useEffect, type RefObject } from "react";
 
 export function useOutsideClick<T extends HTMLElement>(
@@ -69,11 +69,11 @@ export const Navbar = () => {
 
 
   // Toggle dropdown on click (for arrow icon only)
-  const handleDropdownToggle = (href: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setOpenDropdown(openDropdown === href ? null : href);
-  };
+  // const handleDropdownToggle = (href: string, e: React.MouseEvent) => {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   setOpenDropdown(openDropdown === href ? null : href);
+  // };
 
   // Handle link click with dropdown
   const handleLinkWithDropdown = (href: string) => (e: React.MouseEvent) => {
@@ -110,22 +110,34 @@ export const Navbar = () => {
                 }
                 fontSize="1.5rem"
                 lineHeight="100%"
-                fontWeight="500"
+                borderBottom={
+                  link.label != "Contact" ?
+                    activeLink === link.href
+                      ? "2px solid #DC9C46"
+                      : "none" : "none"
+                }
+                fontWeight={
+                  activeLink === link.href
+                    ? 700
+                    : 500
+                }
                 bg={useColorModeValue("transparent", "gray.400")}
                 color={
-                  activeLink === link.href
-                    ? useColorModeValue("#b3b3b3ff", "gray.100")
-                    : useColorModeValue("white", "gray.400")
+                  link.label != "Contact" ?
+                    activeLink === link.href
+                      ? "#DC9C46"
+                      : "#0C182A" : "#0C182A"
                 }
-                _hover={{ color: useColorModeValue("#226CFF", "gray.100") }}
-                _active={{ color: useColorModeValue("#226CFF", "gray.100") }}
+                _hover={{ color: link.label != "Contact" ? "#DC9C46" : "" }}
                 display="inline-flex"
                 alignItems="center"
                 gap="0.3rem"
                 cursor="pointer"
               >
-                {lang === "en" ? link.en : link.ar}
-                {link.subNav && link.subNav.length > 0 ? (
+                {link.label != "Contact" ? <Box p={4}>{lang === "en" ? link.en : link.ar} </Box> : <></>}
+                {link.label == "Contact" ? <Box bg={`#DC9C46`} p={4} borderRadius={"2xl"}>{lang === "en" ? link.en : link.ar}</Box> : null}
+
+                {/* {link.subNav && link.subNav.length > 0 ? (
                   <Box
                     as="span"
                     onClick={(e) => handleDropdownToggle(link.href, e)}
@@ -141,7 +153,7 @@ export const Navbar = () => {
                       }}
                     />
                   </Box>
-                ) : null}
+                ) : null} */}
               </Link>
 
               {/* SubNav dropdown */}

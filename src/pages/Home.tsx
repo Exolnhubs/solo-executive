@@ -73,7 +73,23 @@ const HeroBackground = memo(() => {
 
 HeroBackground.displayName = "HeroBackground";
 
+export const handleScroll = (href: string) => (e: React.MouseEvent) => {
+  e.preventDefault();
 
+  // Convert `/contact` to `#contact`
+  if (href === "/") {
+    href = "#home";
+  }
+  const alt = href.startsWith("#") ? href : "#" + href.replace("/", "");
+  const section = document.querySelector(alt);
+
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.pushState(null, "", alt);
+  } else {
+    console.warn(`Skipping invalid scroll target: ${alt}`);
+  }
+};
 
 export const Home = () => {
 
@@ -91,23 +107,7 @@ export const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleScroll = (href: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
 
-    // Convert `/contact` to `#contact`
-    if (href === "/") {
-      href = "#home";
-    }
-    const alt = href.startsWith("#") ? href : "#" + href.replace("/", "");
-    const section = document.querySelector(alt);
-
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-      window.history.pushState(null, "", alt);
-    } else {
-      console.warn(`Skipping invalid scroll target: ${alt}`);
-    }
-  };
 
 
   return (

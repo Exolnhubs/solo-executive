@@ -14,21 +14,22 @@ export const Header = () => {
       as="header"
       zIndex={2}
       color="white"
+      bg="white"
       position="absolute"
       top={0}
-      mt={6}
-      w="90%"
-      px={4}
+      w="100vw"
+      p={4}
     >
-      <HStack justify="space-between" align="center">
+      <HStack px={16}
+        justify="space-between" align="center">
         {/* Logo */}
         <ChakraLink href="/">
           <Image src="./solo.webp" alt="Logo" w="60px" h="100%" />
         </ChakraLink>
         {/* Desktop Navbar + Actions: show ONLY on lg and up */}
-        <HStack display={{ base: "none", lg: "flex" }} maxW={"50%"} justifyContent={"space-between"} gap={6} align="center">
+        <HStack display={{ base: "none", lg: "flex" }}
+          justifyContent={"space-between"} gap={6} align="center">
           <Navbar />
-
         </HStack>
 
         {/* Mobile Hamburger: show UP TO md (hidden on lg and above) */}

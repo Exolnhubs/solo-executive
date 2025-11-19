@@ -36,6 +36,8 @@ const initialState: NavState = {
     { href: "#projects", label: "Projects", en: "Previous projects", ar: "أعمالنا" },
     { href: "#about", label: "About", en: "About", ar: "من نحن" },
     { href: "#contact", label: "Contact", en: "Contact", ar: "تواصل معنا" },
+    { href: "#terms", label: "Terms", en: "Terms", ar: "الشروط والاحكام" },
+    { href: "#privacy", label: "Privacy", en: "Privacy", ar: "سياسة الخصوصية" },
   ],
   activeLink: "#home",
   isArabic: false,

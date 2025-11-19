@@ -1,5 +1,5 @@
 import { HStack, VStack, Text, Box } from "@chakra-ui/react";
-
+import { handleScroll } from "../../pages/Home";
 export const WhoWeAre = () => {
   return (
     <VStack id="about">
@@ -51,6 +51,7 @@ export const WhoWeAre = () => {
             borderRadius="md"
             fontWeight="700"
             _hover={{ opacity: 0.9 }}
+            onClick={handleScroll("#contact")}
           >
             اطلب عرض الأسعار خلال 24 ساعة
           </Box>

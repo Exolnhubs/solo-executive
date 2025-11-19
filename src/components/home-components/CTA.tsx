@@ -1,3 +1,4 @@
+import { handleScroll } from "../../pages/Home";
 import { VStack, Text, Box, Image } from "@chakra-ui/react";
 
 export const CTA = () => {
@@ -62,6 +63,8 @@ export const CTA = () => {
                     color="rgba(12, 24, 42, 1)"
                     fontWeight="600"
                     _hover={{ opacity: 0.9 }}
+                    onClick={handleScroll("#contact")}
+
                 >
                     استلم خطة مبدئية مجاناً
                 </Box>
