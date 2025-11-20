@@ -6,7 +6,7 @@ import { VStack, Text, Box } from "@chakra-ui/react";
 import "swiper/swiper-bundle.css";
 import { useSelector } from "react-redux";
 import { selectLanguage } from "../../store/slices/languageSlice";
-import { handleScroll } from "../../pages/Home";
+// import { handleScroll } from "../../pages/Home";
 // const images = ["/Partners.webp", "/Partners 2.webp", "/Partners 1.webp", "/Partners 3.webp", "/Partners 4.webp","/Partners 5.webp"];
 
 // Repeat images until we reach 10 slides
@@ -90,7 +90,7 @@ export const OurPartners = () => {
 
             <Box as={"button"} bg={"rgba(220, 156, 70, 1)"} color="black"
                 lineHeight={"100%"} fontSize={"1.2rem"} fontWeight={700}
-                onClick={handleScroll("#contact")}
+                // onClick={handleScroll("#contact")}
 
                 _hover={{ bg: "rgba(220, 156, 70, 0.8)" }} border="none" border-radius="5px" p={4} borderRadius={8}>
                 احجز اجتماع 15 دقيقة

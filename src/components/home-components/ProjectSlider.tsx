@@ -3,7 +3,7 @@ import { Slider } from "./ProjectsSwiper";
 
 export const ProjectSlides = [
     {
-        image: "/Proj1.webp",
+        image: "/1.webp",
         title: "معرض الحج والعمرة",
         description:
             "عظيم معرض متكامل عمل انة مخصصة للجهات الحكومية والامة ومات لوجستية وطنية وحضور رسمي رفيع.",
@@ -12,7 +12,7 @@ export const ProjectSlides = [
         location: "قاعة سوبر دوم, جده",
     },
     {
-        image: "/Proj2.webp",
+        image: "/2.webp",
         title: "منتدى الابتكار الحكومي",
         description:
             "تنسيق أكثر من 03 متحدث دولي، وتنفيذ بث مباشر، وتجربة تفاعلية رقمية للحضور..",
