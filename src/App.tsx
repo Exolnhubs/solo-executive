@@ -17,6 +17,7 @@ import { Projects } from './pages/Projects.tsx';
 import { Terms } from './pages/Terms.tsx';
 import { Privacy } from './pages/Privacy.tsx';
 import { Services } from './pages/Services.tsx';
+
 function App() {
   const { direction } = useLanguage();
   useDirection();

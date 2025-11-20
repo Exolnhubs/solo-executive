@@ -14,32 +14,15 @@ interface NavState {
   activeLink: string;
   isArabic: boolean;
 }
-
-// const initialState: NavState = {
-//   links: [
-//     { href: "/", label: "Home", en: "Home", ar: "الرئيسية" },
-//     {
-//       href: "/Services", label: "Services", en: "Services", ar: "خدماتنا", subNav: [
-//       ]
-//     },
-//     { href: "/projects", label: "projects", en: "Previous projects", ar: "أعمالنا" },
-//     { href: "/about", label: "About", en: "About", ar: "من نحن" },
-//     { href: "/contact", label: "Contact", en: "Contact", ar: "تواصل معنا" },
-//   ],
-//   activeLink: "/",
-//   isArabic: false,
-// };
 const initialState: NavState = {
   links: [
-    { href: "#home", label: "Home", en: "Home", ar: "الرئيسية" },
-    { href: "#services", label: "Services", en: "Services", ar: "خدماتنا", subNav: [] },
-    { href: "#projects", label: "Projects", en: "Previous projects", ar: "أعمالنا" },
-    { href: "#about", label: "About", en: "About", ar: "من نحن" },
-    { href: "#contact", label: "Contact", en: "Contact", ar: "تواصل معنا" },
-    { href: "#terms", label: "Terms", en: "Terms", ar: "الشروط والاحكام" },
-    { href: "#privacy", label: "Privacy", en: "Privacy", ar: "سياسة الخصوصية" },
+    { href: "/", label: "Home", en: "Home", ar: "الرئيسية" },
+    { href: "/about", label: "About", en: "About", ar: "من نحن" },
+    { href: "/services", label: "Services", en: "Services", ar: "خدماتنا" },
+    { href: "/projects", label: "Projects", en: "Previous projects", ar: "أعمالنا" },
+    { href: "/contact", label: "Contact", en: "Contact", ar: "تواصل معنا" },
   ],
-  activeLink: "#home",
+  activeLink: "/",
   isArabic: false,
 };
 

@@ -18,25 +18,34 @@ import { CTA } from "../components/home-components/CTA.tsx";
 import { OurServices } from "../components/home-components/OurServices.tsx";
 import { ProjectSlider } from "../components/home-components/ProjectSlider.tsx";
 import { ConactSection } from "../components/home-components/ConactSection.tsx";
+import { StatsSection } from "../components/home-components/StatsSection.tsx";
 
-// Memoized Hero Background Component
-const HeroBackground = memo(() => {
-  const [patternLoaded, setPatternLoaded] = useState(false);
+
+interface HeroData {
+  image: string;
+  alt?: string;
+  overlay?: string;
+  fallback?: string;
+  title?: string;
+  subtitle?: string;
+}
+
+export const HeroBackground = memo(({ data }: { data: HeroData }) => {
+  const [loaded, setLoaded] = useState(false);
 
   return (
     <>
-      {/* Pattern Image Layer */}
+      {/* Background Image Layer */}
       <Box
-        id="home"
         position="absolute"
         inset={0}
         zIndex={0}
-        opacity={patternLoaded ? 1 : 0}
+        opacity={loaded ? 1 : 0}
         transition="opacity 0.6s ease-in-out"
       >
         <Image
-          src="./head.webp"
-          alt=""
+          src={data.image}
+          alt={data.alt || ""}
           role="presentation"
           objectFit="cover"
           objectPosition="center"
@@ -44,62 +53,84 @@ const HeroBackground = memo(() => {
           h="100%"
           loading="eager"
           decoding="async"
-          onLoad={() => setPatternLoaded(true)}
+          onLoad={() => setLoaded(true)}
         />
       </Box>
 
-      {/* Fallback gradient while pattern loads */}
-      {!patternLoaded && (
+      {/* Fallback Gradient */}
+      {!loaded && (
         <Box
           position="absolute"
           inset={0}
           zIndex={0}
-          bgGradient="linear(to-br, gray.800, gray.900)"
+          bgGradient={data.fallback || "linear(to-br, gray.800, gray.900)"}
         />
       )}
 
-      {/* Overlay layer */}
+      {/* Overlay Layer */}
       <Box
         position="absolute"
         inset={0}
-        bg="rgba(12, 24, 42, 0.7)"
+        bg={data.overlay || "rgba(12, 24, 42, 0.7)"}
         zIndex={1}
-        opacity={patternLoaded ? 1 : 0.8}
+        opacity={loaded ? 1 : 0.8}
         transition="opacity 0.6s ease-in-out"
       />
+
+      {/* Dynamic Text Content (optional) */}
+      {(data.title || data.subtitle) && (
+        <VStack
+          position="absolute"
+          zIndex={2}
+          inset={0}
+          justify="center"
+          align="center"
+          textAlign="center"
+          px={6}
+        >
+          {data.title && (
+            <Text fontSize={{ base: "2xl", md: "4xl" }} fontWeight="bold" color="white">
+              {data.title}
+            </Text>
+          )}
+          {data.subtitle && (
+            <Text fontSize={{ base: "md", md: "lg" }} color="whiteAlpha.900">
+              {data.subtitle}
+            </Text>
+          )}
+        </VStack>
+      )}
     </>
   );
 });
 
+
 HeroBackground.displayName = "HeroBackground";
 
-export const handleScroll = (href: string) => (e: React.MouseEvent) => {
-  e.preventDefault();
+// export const handleScroll = (href: string) => (e: React.MouseEvent) => {
+//   e.preventDefault();
 
-  // Convert `/contact` to `#contact`
-  if (href === "/") {
-    href = "#home";
-  }
-  const alt = href.startsWith("#") ? href : "#" + href.replace("/", "");
-  const section = document.querySelector(alt);
 
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth", block: "start" });
-    window.history.pushState(null, "", alt);
-  } else {
-    console.warn(`Skipping invalid scroll target: ${alt}`);
-  }
+//   const alt = href.startsWith("#") ? href : "#" + href.replace("/", "");
+//   const section = document.querySelector(alt);
+
+//   if (section) {
+//     section.scrollIntoView({ behavior: "smooth", block: "start" });
+//     window.history.pushState(null, "", alt);
+//   } else {
+//     console.warn(`Skipping invalid scroll target: ${alt}`);
+//   }
+// };
+export const handleOpenProfile = () => {
+  const pdfUrl = `${window.location.origin}/profile-soloexecutive.pdf`; // no spaces in filename
+  const viewerUrl = `https://docs.google.com/gview?url=${pdfUrl}&embedded=true`;
+  window.open(viewerUrl, "_blank");
 };
-
 export const Home = () => {
 
   const [loading, setLoading] = useState(true);
   // const lang = useSelector(selectLanguage);
-  const handleOpenProfile = () => {
-    const pdfUrl = `${window.location.origin}/profile-soloexecutive.pdf`; // no spaces in filename
-    const viewerUrl = `https://docs.google.com/gview?url=${pdfUrl}&embedded=true`;
-    window.open(viewerUrl, "_blank");
-  };
+
 
   // Simulate loading images & content
   useEffect(() => {
@@ -128,7 +159,14 @@ export const Home = () => {
           overflow="hidden"
           isolation="isolate"
         >
-          <HeroBackground />
+          <HeroBackground
+            data={{
+              image: "./head.webp",
+              alt: "Packaging factory",
+              // overlay: "rgba(12, 24, 42, 0.7)",   // optional
+              fallback: "linear(to-br, gray.800, gray.900)", // optional
+            }}
+          />
 
           {/* Foreground content */}
           <VStack position="relative" w={"100%"} color={"white"} mt={{ base: "10rem", md: "5rem", lg: "0" }} mb={{ base: "10rem", md: "5rem", lg: "0" }} zIndex={2} alignItems={"center"} >
@@ -142,8 +180,8 @@ export const Home = () => {
             </Text>
             <HStack gap={4} mt={4}>
               <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700}
-              onClick={handleScroll("#contact")}
-              fontSize={{ base: "sm", md: "md", lg: "lg" }} color={"black"} bg={"rgba(220, 156, 70, 1)"}
+                // onClick={handleScroll("#contact")}
+                fontSize={{ base: "sm", md: "md", lg: "lg" }} color={"black"} bg={"rgba(220, 156, 70, 1)"}
               >اطلب استشارة مجانية</Box>
               <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700} onClick={handleOpenProfile}
                 _hover={{
@@ -156,30 +194,11 @@ export const Home = () => {
           </VStack>
         </HStack>
 
+
         <WhoWeAre />
-        <HStack align="stretch" w={{ base: "70%", md: "50%", lg: "40%" }} justifyContent={"space-between"}>
+        <StatsSection />
 
-          <VStack >
-            <Text color={"rgba(220, 156, 70, 1)"} fontSize={{ sm: "2rem", lg: "3rem" }} fontWeight={700}>+٢٠٠</Text>
-            <Text color={"rgba(70, 78, 95, 1)"} fontWeight={"700"}>فعالية ناجحة</Text>
-          </VStack>
 
-          <Box borderRight={"2px solid rgba(234, 234, 234, 1)"} />
-
-          <VStack>
-            <Text color={"rgba(220, 156, 70, 1)"} fontSize={{ sm: "2rem", lg: "3rem" }} fontWeight={700} >+٥٠</Text>
-            <Text color={"rgba(70, 78, 95, 1)"} fontWeight={"700"}>عميل راضٍ</Text>
-          </VStack>
-
-          <Box borderRight={"2px solid rgba(234, 234, 234, 1)"} />
-
-          <VStack>
-            <Text color={"rgba(220, 156, 70, 1)"} fontSize={{ sm: "2rem", lg: "3rem" }} fontWeight={700} >+١٠</Text>
-            <Text color={"rgba(70, 78, 95, 1)"} fontWeight={"700"}>سنوات خبرة</Text>
-
-          </VStack>
-
-        </HStack>
         <WhyUs />
 
         <OurServices />
