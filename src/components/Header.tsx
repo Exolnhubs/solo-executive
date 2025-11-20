@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { useState } from "react";
 import { useRef } from "react";
+import { persistor } from "../store/index";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,7 +24,10 @@ export const Header = () => {
       <HStack px={16}
         justify="space-between" align="center">
         {/* Logo */}
-        <ChakraLink href="/">
+        <ChakraLink href="/" onClick={() => {
+          persistor.purge();
+          window.location.reload();
+        }}>
           <Image src="./solo.webp" alt="Logo" w="60px" h="100%" />
         </ChakraLink>
         {/* Desktop Navbar + Actions: show ONLY on lg and up */}
@@ -46,20 +50,22 @@ export const Header = () => {
       </HStack>
 
       {/* Mobile Menu (visible only when menuOpen AND on md and below) */}
-      {menuOpen && (
-        <VStack
-          ref={menuRef} // 👈 attach ref here
-          mt={4}
-          p={4}
-          gap={6}
-          align="stretch"
-          bg="blackAlpha.900"
-          borderRadius="lg"
-          display={{ base: "flex", lg: "none" }}
-        >
-          <Navbar />
-        </VStack>
-      )}
-    </Box>
+      {
+        menuOpen && (
+          <VStack
+            ref={menuRef} // 👈 attach ref here
+            mt={4}
+            p={4}
+            gap={6}
+            align="stretch"
+            bg="blackAlpha.900"
+            borderRadius="lg"
+            display={{ base: "flex", lg: "none" }}
+          >
+            <Navbar />
+          </VStack>
+        )
+      }
+    </Box >
   );
 };

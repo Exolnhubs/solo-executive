@@ -22,25 +22,7 @@ export const Footer: FC = () => {
   const lang = useSelector(selectLanguage);
   const t = useTranslation;
   const { links } = useSelector((state: RootState) => state.nav);
-  // const dispatch = useDispatch();
-  // ✅ Fixed smooth scroll handler with URL update
-  const handleScroll = (href: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
 
-    // Convert `/contact` to `#contact`
-    if (href === "/") {
-      href = "#home";
-    }
-    const alt = href.startsWith("#") ? href : "#" + href.replace("/", "");
-    const section = document.querySelector(alt);
-
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-      window.history.pushState(null, "", alt);
-    } else {
-      console.warn(`Skipping invalid scroll target: ${alt}`);
-    }
-  };
 
 
   return (
@@ -74,9 +56,9 @@ export const Footer: FC = () => {
       >
         {/* Logo Section */}
         <VStack justifyContent={"space-between"} align={{ base: "center", md: "flex-start" }} gap={4} maxW={{ base: "100%", md: "35%" }}>
-                 <Link href="/">
-                   <Image src="./solo.webp" alt="Logo" w="60px" h="100%" />
-                 </Link>
+          <Link href="/">
+            <Image src="./solo.webp" alt="Logo" w="60px" h="100%" />
+          </Link>
           <Text textAlign={{ base: "center", md: "start" }} fontWeight={"500"} fontSize={{ base: "0.7rem", md: "0.9rem", lg: "1rem" }}  > {t("footer.text")} </Text>
           <VStack gap={4} mt={4}>
             <HStack justifyContent={"space-between"} align={{ base: "start", md: "flex-start" }} >
@@ -138,7 +120,7 @@ export const Footer: FC = () => {
               <Box key={link.href}>
                 <Link
                   href={link.href}
-                  onClick={handleScroll(link.href)}
+                  // onClick={() => { window.location.href = link.href }}
                   fontSize="1.5rem"
                   lineHeight="100%"
                   fontWeight="500"
