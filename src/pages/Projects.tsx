@@ -1,11 +1,12 @@
 import { VStack, HStack, Text, Box } from "@chakra-ui/react";
 import { handleOpenProfile, HeroBackground } from "./Home";
 import { CTA } from "../components/home-components/CTA";
+import { OurWork } from "../components/projects/OurWork";
 
 
 export const Projects = () => {
     return (
-        <VStack>
+        <VStack w={"100%"} pos={"relative"}>
             <HStack
                 position="relative"
                 top={0}
@@ -48,6 +49,9 @@ export const Projects = () => {
                     </HStack>
                 </VStack>
             </HStack>
+
+            
+            <OurWork />
 
             <CTA />
         </VStack>
