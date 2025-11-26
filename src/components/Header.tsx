@@ -41,7 +41,7 @@ export const Header = () => {
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           display={{ base: "flex", lg: "none" }}
           variant="ghost"
-          color="white"
+          color="black"
           onClick={() => setMenuOpen((s) => !s)}
           zIndex={5}
         >
@@ -58,7 +58,7 @@ export const Header = () => {
             p={4}
             gap={6}
             align="stretch"
-            bg="blackAlpha.900"
+            bg="whitealpha.900"
             borderRadius="lg"
             display={{ base: "flex", lg: "none" }}
           >

@@ -120,7 +120,6 @@ export const Footer: FC = () => {
               <Box key={link.href}>
                 <Link
                   href={link.href}
-                  // onClick={() => { window.location.href = link.href }}
                   fontSize="1.5rem"
                   lineHeight="100%"
                   fontWeight="500"
@@ -153,6 +152,7 @@ export const Footer: FC = () => {
             textAlign="start"
             width="100%"
             fontSize={{ base: "1rem", md: "1.2rem" }}
+            onClick={() => { window.location.href = "/privacy" }}
             fontWeight={400}
             _hover={{
               color: useColorModeValue("#4d7cb1", "gray.100"),
@@ -166,6 +166,8 @@ export const Footer: FC = () => {
             textAlign="start"
             width="100%"
             fontSize={{ base: "1rem", md: "1.2rem" }}
+            onClick={() => { window.location.href = "/terms" }}
+
             fontWeight={400}
             _hover={{
               color: useColorModeValue("#4d7cb1", "gray.100"),

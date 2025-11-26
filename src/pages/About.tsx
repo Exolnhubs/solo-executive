@@ -4,6 +4,7 @@ import WhoWeAre from "../components/home-components/WhoWeAre";
 import { WhyUs } from "../components/home-components/WhyUs";
 import { CTA } from "../components/home-components/CTA";
 import { StatsSection } from "../components/home-components/StatsSection";
+import { Team } from "../components/about/Team";
 
 
 export const About = () => {
@@ -54,6 +55,8 @@ export const About = () => {
             <WhoWeAre />
             <StatsSection />
             <WhyUs />
+
+            <Team />
             <CTA />
         </VStack>
     );
