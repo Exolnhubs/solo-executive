@@ -1,4 +1,4 @@
-import { HStack, VStack, Text, Box } from "@chakra-ui/react";
+import { HStack, VStack, Text, Box, List, } from "@chakra-ui/react";
 // import { handleScroll } from "../../pages/Home";
 export const WhoWeAre = () => {
   return (
@@ -51,7 +51,7 @@ export const WhoWeAre = () => {
             borderRadius="md"
             fontWeight="700"
             _hover={{ opacity: 0.9 }}
-            // onClick={handleScroll("#contact")}
+          // onClick={handleScroll("#contact")}
           >
             اطلب عرض الأسعار خلال 24 ساعة
           </Box>
@@ -83,26 +83,41 @@ export const WhoWeAre = () => {
                 <VStack
                   w="100%"
                   gap={4}
+                  p={4}
                   fontSize={{ base: "0.9rem", md: "1rem" }}
                   textAlign="start"
                   align="start"
                 >
+                  {/* وعدنا */}
                   <Text fontWeight="bold">وعدنا</Text>
-                  <Text borderBottom="1px solid rgba(255, 255, 255, 0.5)" pb={6}>
-                    تخطيط محكم يقلّل الهدر ويرفع العائد على كل ريال.
-                    تنفيذ دقيق وآمن بقيادة فرق معتمدة وبروتوكولات واضحة.
-                    شفافية كاملة في الميزانيات والتوريد والجداول الزمنية.
-                    تقرير أداء بعدي برؤى عملية للتحسين المستمر.
-                  </Text>
+                  <List.Root
+                    gap={3}
+                    borderBottom="1px solid rgba(255, 255, 255, 0.5)"
+                    pb={6}
+                    style={{ marginInlineStart: "1rem" }} // better RTL indentation
+                  >
+                    <List.Item>تخطيط محكم يقلّل الهدر ويرفع العائد على كل ريال.</List.Item>
+                    <List.Item>تنفيذ دقيق وآمن بقيادة فرق معتمدة وبروتوكولات واضحة.</List.Item>
+                    <List.Item>شفافية كاملة في الميزانيات والتوريد والجداول الزمنية.</List.Item>
+                    <List.Item>تقرير أداء بعدي برؤى عملية للتحسين المستمر.</List.Item>
+                  </List.Root >
 
+                  {/* مهمتنا */}
                   <Text fontWeight="bold">مهمتنا</Text>
-                  <Text>
-                    عهدنا: مهنية بلا ضجيج، التزام مكتوب نراجعه بعد كل مشروع.
-                    الإتقان: الجودة نتيجة لنظام عمل (قوائم فحص، مسؤوليات واضحة، مراجعات).
-                    السلامة والمسؤولية: خطط مخاطر وطوارئ وتأمينات وتصاريح قبل أي تشغيل.
-                    الشغف الهادئ: نحب ما نعمل، ونُخضعه لاختبار الجدوى قبل أن تراه على الأرض.
-                  </Text>
+                  <List.Root gap={3} style={{ marginInlineStart: "1rem" }}>
+                    <List.Item>عهدنا: مهنية بلا ضجيج، التزام مكتوب نراجعه بعد كل مشروع.</List.Item>
+                    <List.Item>
+                      الإتقان: الجودة نتيجة لنظام عمل (قوائم فحص، مسؤوليات واضحة، مراجعات).
+                    </List.Item>
+                    <List.Item>
+                      السلامة والمسؤولية: خطط مخاطر وطوارئ وتأمينات وتصاريح قبل أي تشغيل.
+                    </List.Item>
+                    <List.Item>
+                      الشغف الهادئ: نحب ما نعمل، ونُخضعه لاختبار الجدوى قبل أن تراه على الأرض.
+                    </List.Item>
+                  </List.Root >
                 </VStack>
+
               </Box>
             </Box>
           </VStack>
