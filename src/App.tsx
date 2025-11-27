@@ -8,7 +8,7 @@ import { Footer } from './components/Footer';
 import { useLanguage } from "./hooks/useLanguage.ts";
 import { useEffect } from "react";
 import { NotFound } from './pages/NotFound';
-// import {ThankYou} from './pages/ThankYou';
+import {ThankYou} from './pages/ThankYou';
 import useDirection from "./hooks/useDirection.ts";
 import useFontFamily from "./hooks/useFontFamily";
 import { About } from './pages/About.tsx';
@@ -42,7 +42,7 @@ function App() {
             <Route path='/terms' element={<Terms />} />
             <Route path='/privacy' element={<Privacy />} />
 
-            {/* <Route path="/thankyou" element={<ThankYou />} /> */}
+            <Route path="/thank-you" element={<ThankYou />} />
 
             <Route path="*" element={<NotFound />} />
 

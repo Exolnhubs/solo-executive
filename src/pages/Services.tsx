@@ -1,6 +1,6 @@
 import { OurServices } from "../components/home-components/OurServices";
 import { VStack, HStack, Text, Box } from "@chakra-ui/react";
-import { handleOpenProfile, HeroBackground } from "./Home";
+import { handleOpenProfile, HeroBackground, handleScroll } from "./Home";
 import { CTA } from "../components/home-components/CTA";
 
 
@@ -36,7 +36,7 @@ export const Services = () => {
                     </Text>
                     <HStack gap={4} mt={4}>
                         <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700}
-                            // onClick={handleScroll("#contact")}
+                            onClick={handleScroll("#contact")}
                             fontSize={{ base: "sm", md: "md", lg: "lg" }} color={"black"} bg={"rgba(220, 156, 70, 1)"}
                         >اطلب استشارة مجانية</Box>
                         <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700} onClick={handleOpenProfile}

@@ -33,6 +33,17 @@ interface HeroData {
 export const HeroBackground = memo(({ data }: { data: HeroData }) => {
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+        }, 100); // wait for page render
+      }
+    }
+  }, []);
+
   return (
     <>
       {/* Background Image Layer */}
@@ -107,20 +118,26 @@ export const HeroBackground = memo(({ data }: { data: HeroData }) => {
 
 HeroBackground.displayName = "HeroBackground";
 
-// export const handleScroll = (href: string) => (e: React.MouseEvent) => {
-//   e.preventDefault();
+export const handleScroll = (href: string) => (e: React.MouseEvent) => {
+  e.preventDefault();
+  console.log(href);
+  console.log(window.location.href.split("/").pop());
+
+  if ( window.location.pathname !== "/contact") {
+    window.location.href = window.location.origin + "/" + href;
+  }
 
 
-//   const alt = href.startsWith("#") ? href : "#" + href.replace("/", "");
-//   const section = document.querySelector(alt);
+  const alt = href.startsWith("#") ? href : "#" + href.replace("/", "");
+  const section = document.querySelector(alt);
 
-//   if (section) {
-//     section.scrollIntoView({ behavior: "smooth", block: "start" });
-//     window.history.pushState(null, "", alt);
-//   } else {
-//     console.warn(`Skipping invalid scroll target: ${alt}`);
-//   }
-// };
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.pushState(null, "", alt);
+  } else {
+    console.warn(`Skipping invalid scroll target: ${alt}`);
+  }
+};
 export const handleOpenProfile = () => {
   const pdfUrl = `${window.location.origin}/profile-soloexecutive.pdf`; // no spaces in filename
   const viewerUrl = `https://docs.google.com/gview?url=${pdfUrl}&embedded=true`;
@@ -180,7 +197,7 @@ export const Home = () => {
             </Text>
             <HStack gap={4} mt={4}>
               <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700}
-                // onClick={handleScroll("#contact")}
+                onClick={handleScroll("#contact")}
                 fontSize={{ base: "sm", md: "md", lg: "lg" }} color={"black"} bg={"rgba(220, 156, 70, 1)"}
               >اطلب استشارة مجانية</Box>
               <Box p={4} borderRadius={"xl"} as={"button"} fontWeight={700} onClick={handleOpenProfile}

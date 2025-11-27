@@ -1,4 +1,4 @@
-import { selectLanguage } from "@/store/slices/languageSlice";
+import { selectLanguage } from "../store/slices/languageSlice";
 import { VStack, Box, Text, Icon } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import { FaCheckCircle } from "react-icons/fa";
