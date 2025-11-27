@@ -124,9 +124,12 @@ export const ConactSection = () => {
             {/* FORM + CONTACT INFO */}
             <VStack w={"100%"}>
                 <HStack
-                    w="90%"
+                    maxW={"100vw"}
+                    overflow={"hidden"}
                     flexDir={{ base: "column", lg: "row" }}
-                    justify="space-between"
+                    justifyContent="space-between"
+                    alignContent={"center"}
+                    alignItems={"center"}
                     gap={8}
                     align={"stretch"}
                     p={8}
