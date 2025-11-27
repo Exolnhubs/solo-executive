@@ -128,34 +128,38 @@ export const ConactSection = () => {
                     flexDir={{ base: "column", lg: "row" }}
                     justify="space-between"
                     gap={8}
+                    align={"stretch"}
                     p={8}
                     position="relative"
                 >
-                    <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+                    <Box
+                        bg="linear-gradient(to bottom, rgba(253, 233, 129, 1), rgba(220, 156, 70, 1))"
+                        position="absolute"
+                        left="-5vw"
+                        top="0"
+                        bottom="0"
+                        zIndex={1}
+                        borderRadius={"lg"}
+                        w={{ base: "35vw", lg: "15vw" }}
+                    />
 
-                        <Box
-                            bg="linear-gradient(to bottom, rgba(253, 233, 129, 1), rgba(220, 156, 70, 1))"
-                            position="absolute"
-                            left="-5vw"
-                            top="0"
-                            bottom="0"
-                            zIndex={1}
-                            borderRadius={"lg"}
-                            w="15vw"
-                        />
 
-                        {/* FORM */}
-                        <VStack
-                            color={"#464E5F"}
-                            gap={4}
-                            bg={"white"}
-                            zIndex={2}
-                            w={{ base: "120%", md: "40%" }}
-                            textAlign={"start"}
-                            border={"2px solid rgba(12, 24, 42, 0.1)"}
-                            p={8}
-                            borderRadius={"lg"}
-                        >
+
+                    {/* FORM */}
+                    <VStack
+                        color={"#464E5F"}
+
+                        gap={4}
+                        bg={"white"}
+                        zIndex={2}
+                        w={{ base: "90%", lg: "50%" }}
+                        textAlign={"start"}
+                        border={"2px solid rgba(12, 24, 42, 0.1)"}
+                        p={8}
+                        borderRadius={"lg"}
+                    >
+                        <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+
                             {/* NAME + PHONE */}
                             <HStack w={"100%"}>
                                 <VStack w={"50%"}>
@@ -278,10 +282,11 @@ export const ConactSection = () => {
                             >
                                 {isSubmitting ? "جاري الإرسال..." : "إرسال الطلب"}
                             </Button>
-                        </VStack>
-                    </form>
+                        </form>
 
-                    <VStack w={{ base: "120%", md: "30%" }} borderRadius={"lg"} bg={"rgba(12, 24, 42, 1)"} color={"white"} p={12} gap={8} zIndex={2}>
+                    </VStack>
+
+                    <VStack w={{ base: "90%", lg: "40%" }} borderRadius={"lg"} bg={"rgba(12, 24, 42, 1)"} color={"white"} p={12} gap={8} zIndex={2}>
                         <Text fontSize={"1.5rem"} w={"100%"} textAlign={"start"} fontWeight={700}> معلومات التواصل </Text>
                         <VStack w={"100%"}>
                             <HStack justifyContent={"space-between"} w={"90%"}> <Box bg={"rgba(255, 255, 255, 0.1)"} p={2} borderRadius={"lg"}>
