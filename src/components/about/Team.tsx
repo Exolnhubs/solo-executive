@@ -44,10 +44,10 @@ export const Team = () => {
 
             <VStack w={"80%"} mb={24} mt={8} justifyContent={"space-between"} gap={6}>
 
-                <HStack w={"90%"} justifyContent={"space-between"}>
+                <HStack w={"90%"} flexDir={{base:"column" , lg:"row"}} flexWrap={"wrap"} justifyContent={"space-between"}>
                     <VStack pos={"relative"}>
                         <Image src="teammember.png" borderRadius={"2xl"} />
-                        <Box bg={"white"} pos={"absolute"} bottom={"-2rem"} p={2} boxShadow={"xl"} w="80%" borderTop="8px solid rgba(220, 156, 70, 1)"
+                        <Box bg={"white"} pos={{base:"" , lg:"absolute"}} bottom={"-2rem"} p={2} boxShadow={"xl"} w="80%" borderTop="8px solid rgba(220, 156, 70, 1)"
                             justifySelf={"center"} >
                             <Text>Ahmed Usama</Text>
                             <Text>CEO & Founder</Text>
@@ -55,7 +55,7 @@ export const Team = () => {
                     </VStack>
                     <VStack pos={"relative"}>
                         <Image src="teammember.png" borderRadius={"2xl"} />
-                        <Box bg={"white"} pos={"absolute"} bottom={"-2rem"} p={2} boxShadow={"xl"} w="80%" borderTop="8px solid rgba(220, 156, 70, 1)"
+                        <Box bg={"white"} pos={{base:"" , lg:"absolute"}} bottom={"-2rem"} p={2} boxShadow={"xl"} w="80%" borderTop="8px solid rgba(220, 156, 70, 1)"
                             justifySelf={"center"} >
                             <Text>Ahmed Usama</Text>
                             <Text>CEO & Founder</Text>
