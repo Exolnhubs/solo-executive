@@ -91,7 +91,7 @@ export const Footer: FC = () => {
                 +966558176660
               </Text>
             </HStack>
-            <HStack justifyContent={"space-between"} align={{ base: "start", md: "flex-start" }} >
+            <HStack justifyContent={"space-between"} w={"100%"} align={{ base: "start", md: "flex-start" }} gap={4}>
               <IoMail size={"2rem"} />
               <Text
                 display="flex"

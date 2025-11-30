@@ -52,8 +52,9 @@ export const Contact = () => {
 
 
             <Box w={"100vw"} h={"60vh"}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463879.6378930618!2d46.49290152281066!3d24.724831613471693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1764143072583!5m2!1sen!2seg" width="100%" height="100%" style={{ border: "0" }}loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3622.4659290059553!2d46.686162675368315!3d24.779494277982277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDQ2JzQ2LjIiTiA0NsKwNDEnMTkuNSJF!5e0!3m2!1sen!2seg!4v1764506350549!5m2!1sen!2seg" width="100%" height="100%" style={{ border: "0" }}loading="lazy"></iframe>
             </Box>
         </VStack>
     );
 };
+

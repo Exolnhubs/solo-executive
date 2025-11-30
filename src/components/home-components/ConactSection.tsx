@@ -317,7 +317,7 @@ export const ConactSection = () => {
                                     <LuMapPin color="rgba(220, 156, 70, 1)" size={"1.5rem"} />
                                 </Box> <VStack w={"90%"} textAlign={"start"} >
                                     <Text w={"80%"} color={"rgba(255, 255, 255, 0.7)"}>العنوان</Text>
-                                    <Text w={"80%"}> المملكة العربية السعودية</Text>
+                                    <Text w={"80%"}> المملكة العربية السعودية </Text>
                                 </VStack>
 
 
